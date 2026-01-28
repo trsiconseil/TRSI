@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirect</title>
+    <script>
+      // Fallback SPA pour GitHub Pages
+      var pathname = window.location.pathname;
+      var repo = pathname.split("/")[1];
+      window.location.replace(
+        window.location.origin + "/" + repo + "/"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
