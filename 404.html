@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <title>Redirect</title>
     <script>
-      // Fallback SPA pour GitHub Pages
-      var pathname = window.location.pathname;
-      var repo = pathname.split("/")[1];
-      window.location.replace(
-        window.location.origin + "/" + repo + "/"
-      );
+      // GitHub Pages SPA fallback (no redirect loop)
+      var path = window.location.pathname;
+      var repo = path.split("/")[1];
+
+      // Si on est déjà à la racine du repo, on ne redirige pas
+      if (path !== "/" + repo + "/") {
+        window.location.replace(
+          window.location.origin + "/" + repo + "/"
+        );
+      }
     </script>
   </head>
   <body></body>
